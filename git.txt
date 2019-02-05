@@ -1,0 +1,5 @@
+git init
+git add *.txt
+git commit -m 'message'
+
+git clone [url] CATHALOG  --copies repository to the CATHALOG
