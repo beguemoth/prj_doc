@@ -1,0 +1,88 @@
+Oracle Application Express ???
+Oracle SQL Developer
+
+SQL
+	date vs timestamp 
+	timestamp with local time zone ?
+
+...
+savepoint sp1;
+...
+rollback to sp1;
+...
+
+alter user hr account unlock identified by <passord>;
+	
+	sysdate
+	systimestamp
+	select fld1,
+		extract(year from hire_date) "fld2",
+		to_char(hire_date, 'HH24:MI:SS DD.MM.YYYY') "fld3",  --???
+		to_mumber(fld4, '09999.9') "fld04" ---???
+	 from tbl1 order by @fld"; 	
+	extract(HOUR | SECOND | DAY | MINUTE from systimestamp) ...
+	
+
+	select fld1, sum(fld2+1) "fld02"
+	from tbl1
+	group by fld1
+	having sum(fld2+1) > 100;
+
+	avg(..)
+	median(..) --?
+	stddev(..)
+	nvl(a, b)
+	nvl2(a, <if not null>,  <if null>)
+
+
+	case fld1
+		when <val> then <val1>
+		...
+		else ...
+	end;
+
+	case
+		when <condition> then <val>
+		...
+		else ...
+	end;
+
+
+	trunc(fld1, <?>) --?
+
+	decode(fld1 | val,
+		<val1>, <val01>,
+		<val2>, <val02>,
+		...
+		<default>
+		)	
+
+
+	rename <view_name> to <new_name>
+
+	create sequence sq increment by 1 start with 1;
+	you must initialize newly created sequence with NEXTVAL call
+
+	create synonym syn1 for obj1;
+	create public synonym syn2 for obj2;
+
+SQLplus
+	exit
+	column <column name> format A25
+
+	describe <object_name>
+
+	how to call one script from another ?
+	@file.sql --?
+
+select object_name "column 1", object_type as "column 2" from user_objects;
+select a.col1, b.col2 from tb1 a inner join tb2 b on a.fk=b.pk;
+select a.col1, b.col2 from tb1 a left outer join tb2 b on a.fk=b.pk;
+
+select round(<col>,2) from tb1;
+select trunc(<col>) from tb1;
+select txt1 || txt2 from tb1;
+select uppert(col1), lower(col2), initcap(col3) from tb1;
+
+
+
