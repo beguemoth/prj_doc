@@ -1,10 +1,72 @@
 Oracle Application Express ???
 Oracle SQL Developer
 
+Pl/SQL
+pls_integer - uses machinery arithmetic
+interval '100' months
+
+declare
+	a tbl_name.fld_1%type;
+	b tbl_name.fld_2%type;
+	x constant number(10,2) := 1;
+...
+begin
+	select fld_1, fld_2 into a, b from tbl_name;
+end;
+
+
+if <> then ..
+elsif <> then ..
+else ..
+end if;
+
+
+case <>
+when ... then ..
+when ... then ..
+else ..
+end case;
+
+for x in 1..5 loop
+.....
+end loop;
+
+
+while <> loop
+...
+end loop;
+
+
+loop
+...
+exit when <...>;
+end loop;
+
+
+-----------------
+declare typ_rec is record(
+	a number(10.2) := 1,
+	b varchar2(10)
+);
+
+declare x tbl_1%rowtype;
+
+---------------------------
+
+for x in select a,b,c from some_tbl loop
+....
+//x and x.a, x.b, x.c  will be accessed here without declaration
+end loop;
+
+
+
+-----------------------
 SQL
 	date vs timestamp 
 	timestamp with local time zone ?
 
+
+	round(val, 2);
 ...
 savepoint sp1;
 ...

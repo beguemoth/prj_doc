@@ -1,0 +1,8 @@
+--free memory
+free -m
+
+--type of ram 
+sudo lshw -short -C memory
+
+--ram frequency
+sudo lshw -C memory

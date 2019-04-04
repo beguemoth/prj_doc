@@ -1,0 +1,62 @@
+angular.module('app', []); //[dependencies, ...]
+
+var app = angular.module('app');
+//same:
+var app = angular.module('app', []);
+
+<html ng-app="app">
+<head></head>
+<body></body>
+</html>
+
+$scope.someValue='value';
+
+<div ng-controller="AppCtrl">
+{{someValue}}
+</div>
+
+$rootScope //root level scope
+
+angular.module('app',[]).controller('MainCtrl', function(){
+});
+
+----
+function ctrlFunct($scope) {
+	$scope.items = [
+		{id: 1, name:'item1'},
+		{id: 2, name: 'item2'}
+	];
+}
+
+angular.module('app', []).controller('MainCtrl', ctrlFunct);
+
+--
+<div ng-controller="MainCtrl">
+	<ul>
+		<li ng-repeat='item in items'>
+			{{item.name}}
+		</li>
+	</ul>
+</div>
+-----
+
+function ctrlFunct() {
+	this.items = [
+		{id: 1, name: 'item1},
+		{id: 2, name: 'item2'}
+	];
+}
+
+angular.module('app').comtroller('MainCtrl', ctrlFunct);
+
+<div ng-controller="MainCtrl as main">
+	<ul>
+		<li ng-repeat="item in main.items">
+			{{item.name}}
+		</li>
+	</ul>
+</div>
+
+-----
+each $csope has $parent
+----
