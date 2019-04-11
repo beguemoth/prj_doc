@@ -41,8 +41,23 @@ loop
 ...
 exit when <...>;
 end loop;
+---------------
 
+--implicit cursor
+SQL%NOTFOUND
+SQL%FOUND
 
+---explicit
+cursor_name%FOUND
+
+%ISOPEN
+%ROWCOUNT
+
+variable cursor_name%ROWTYPE
+
+SYS_REFCURSOR = ref cursor //with no return type
+
+open ref_cursor for select ...
 -----------------
 declare typ_rec is record(
 	a number(10.2) := 1,
@@ -50,8 +65,86 @@ declare typ_rec is record(
 );
 
 declare x tbl_1%rowtype;
-
 ---------------------------
+
+indexes in index by collections are pls_integer
+
+? bulk collect into ?
+? index by pls_integer ? must be dense ?!
+? how to traverse index by connections?
+---------------------------
+
+exception
+	when no_data_found then
+	...
+	when others then
+	...
+------------------
+declare
+	x1 exception;
+begin
+	raise x1;
+------
+trigger events
+	server: servererror, logon. logoff, startup, shutdown
+
+create or replace trigger tr1
+before update or insert
+on table
+for each row
+begin
+end;
+
+alter trigger a disable
+alter table b disable all triggers
+--------
+view 
+All_DEPENDENCIES
+
+alter trigger a compile;
+-------
+alter session set NLS_LANGUAGE=ITALIAN;
+----------
+runstats_pkg.rs_start
+runstats_pkg.rs_middle
+runstats_pkg.rs_stop(500)
+	
+create or replace view stats
+as select 'STAT...'|| a.name name, b.value
+from v$statname a, v$mystat b
+where a.statistic# = b.statistic#
+union all
+select 'LATCH.'|| name, gets
+from v$latch;
+
+drop table run_stats;
+create global temporary table run_stats
+(runid varchar2(15), name varchar2(80), value int)
+on commit preserve rows;
+
+-------
+create user x identified by pwd
+default tablespace users
+quota unlimited on users
+enable editions;
+
+grant create session to x;
+
+lock table tbl in shared mode;
+
+-----
+instr(str, 'x')
+trunk(sysdate)
+------
+declare 
+type t as table of tbl%rowtype index by binary_integer
+a t;
+cursor c is select * from tbl;
+begin
+open c;
+fetch c bulk collect into a limit 10;
+close c; 
+----
 
 for x in select a,b,c from some_tbl loop
 ....
@@ -128,11 +221,26 @@ alter user hr account unlock identified by <passord>;
 	create synonym syn1 for obj1;
 	create public synonym syn2 for obj2;
 
+	
+	connect user/pwd
+	create synonym syn for schema.object
+
+	forall i in 1..10 loop
+	update... ;
+
+dbms_utility.get_time vs systimestamp vs sysdate
+
+
+alter session enable parralel dml;
+			
 SQLplus
 	exit
 	column <column name> format A25
 
 	describe <object_name>
+	variable c refcursor
+	exec proc(:c);
+	print c
 
 	how to call one script from another ?
 	@file.sql --?

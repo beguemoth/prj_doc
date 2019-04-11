@@ -4,3 +4,13 @@ git commit -m 'message'
 git push --pushes committed changes to git server
 
 git clone [url] CATHALOG  --copies repository to the CATHALOG
+
+--ignore
+--repository
+./git/info/exclude
+
+--globally on computer
+~/.gitconfig
+
+[core]
+	excludesfile = ~/.gitexcludes

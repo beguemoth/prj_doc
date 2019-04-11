@@ -1,0 +1,54 @@
+su postgres
+
+createdb dbname
+
+/usr/lib/postgresql/9.5/bin
+
+psql -h localhost -p 5432 -U postgres -d postgres
+
+select current_date;
+
+\h
+
+\q
+
+\i fil_name.sql
+
+datatypes
+	varchar(x)
+	int ?
+	real
+	date -- '2019-01-31'
+
+	smallint
+	double precision
+	char(x)
+	time
+	timestamp
+	interval
+
+	---postgre-specific:
+	point -- '(12.01, 31.18)'
+
+
+copy tbl_name from '/home/beguemoth/tbl.txt' ---format??
+
+begin
+update ...
+savepoint x;
+...
+rollback to x;
+...
+commit;
+
+select a, b, c, avg(d)  over (partition by a) from x;
+select a, b, rank() over (partition by c order by b) from x;
+select a, sum(a) over() from x;
+1 6
+2 6
+3 6
+
+select a, sum(a) over(order by a) from x;
+1 1
+2 3
+3 6
