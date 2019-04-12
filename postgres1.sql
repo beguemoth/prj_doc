@@ -23,3 +23,21 @@ values(3, '333', 3.3, 3);
 --select id, sum(id) over () from testx;
 
 --select id, sum(id) over (order by id) from testx;
+/*
+insert into testx (id,txt,val, a)
+values(10,'101', 10.1,1);
+*/
+
+/*
+begin; --same as start transaction command
+insert into testx (id,txt,val, a)
+values(20,'200', 20.0,2);
+
+insert into testx (id,txt,val, a)
+values(21,'201', 20.1,2);
+
+insert into testx (id,txt,val, a)
+values(30,'300', 30.0,3);
+commit;
+*/
+
