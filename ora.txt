@@ -254,5 +254,9 @@ select trunc(<col>) from tb1;
 select txt1 || txt2 from tb1;
 select uppert(col1), lower(col2), initcap(col3) from tb1;
 
+---------------------------
+tables with 
+memoptimized for read clause -- 18c ? what was in older versions?
 
+18c - private temporary tables -- dropped at the end of tran and visible in current session only 
 
