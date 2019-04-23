@@ -44,3 +44,11 @@ postgres=# \connect <dbname>
 
 ----quit from psql
 \q
+
+------unzip zip file
+unzip <filename>.zip
+
+---choose java version
+sudo alternatives --config java
+
+
