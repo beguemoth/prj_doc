@@ -6,3 +6,41 @@ sudo lshw -short -C memory
 
 --ram frequency
 sudo lshw -C memory
+
+--rm dir
+rm -rf directory
+
+---Ora Lin
+what is RunLevel 3 or 5?
+
+---
+systemctrl enable <service name = postgresql-11>
+systemctrl enable <service...>
+
+----
+user list
+
+less /etc/passwd | grep <my user>
+
+---------
+pwd change
+
+sudo passwd <user>
+
+PostgreSQL 11 pwd:
+postgres
+postgres
+
+-----------
+list postgres databases - su postgres
+psql
+postgres=# \list
+
+--- tables in current databases
+postgres=# \dt
+
+--- change current database
+postgres=# \connect <dbname>
+
+----quit from psql
+\q
