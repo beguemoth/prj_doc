@@ -2,6 +2,44 @@ Oracle Application Express ???
 Oracle SQL Developer
 
 Pl/SQL
+? --1.8-- create type <type> [not] persistable
+? --1.8-- polymorphic table functions
+? --1.8-- Ora database Pl/SQL Packages and types reference
+? --1.8-- PL/SQL library
+---
+char
+varchar2
+clob
+long
+
+nchar
+nvarchar2
+nclob
+
+--collation : comparison and sort order
+session parameters NLS_COMP NLS_SORT --before Ora 12.2
+since 12.2 collation may be defined to tables and views
+
+--
+set serveroutput on
+--
+%type
+%rowtype
+---
+for x in (select a,b,c from z) loop
+    dbms_output.put_line(x.a || ' ' || x.b);
+end loop;
+---
+
+<<label>>
+declare..
+begin
+...
+exception
+...
+end;
+
+
 pls_integer - uses machinery arithmetic
 interval '100' months
 
