@@ -1,0 +1,16 @@
+--stop linux
+	sudo poweroff
+
+	sudo shutdown -h now
+	sudo shutdown -h [time] [message]  	
+	sudo halt
+
+
+--restart linux
+	sudo reboot
+	sudo shutdown -r now
+	sudo init 6 ---???
+
+
+
+
