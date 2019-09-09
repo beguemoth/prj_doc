@@ -11,6 +11,41 @@
 	sudo shutdown -r now
 	sudo init 6 ---???
 
+--add group
+sudo groupadd my_group1
+
+--remove group
+sudo su
+groupdel <groupname>
+
+--add user
+sudo useradd -m  -c "description" -g <group id>  <user_login>
+sudo passwd <user_login> --sets password for user's login
+-m --create home dir
+?adduser
+
+--remove user
+sudo su
+userdel -r <username>
+
+--home dir
+pwd
+
+--get group list
+sudo more /etc/group | grep <qualifier>
+cut -d: -f1 /etc/group | sort
+cut -d: -f1 /etc/group | grep my
+
+--groups current user belongs to:
+groups
+
+--get user list
+users
+sudo more /etc/passwd | grep <qualifier>
+sudo more /etc/passwd | sort
+
+--add sudoer
+
 
 
 
