@@ -1,0 +1,47 @@
+--to read directory contents you must have X (execute) permission to this directory
+
+$ pwd -- current directory
+$ mkdir darkdirectory 
+$ chmod  
+
+--stop linux
+	sudo poweroff
+
+	sudo shutdown -h now
+	sudo shutdown -h [time] [message]  	
+	sudo halt
+
+
+--restart linux
+	sudo reboot
+	sudo shutdown -r now
+	sudo init 6 ---???
+
+--add group
+sudo groupadd my_group1
+sudo groupadd baton_group
+
+--add user
+
+--get group list
+sudo more /etc/group | grep <qualifier>
+cut -d: -f1 /etc/group | sort
+cut -d: -f1 /etc/group | grep my
+
+group_name:pwd<deprecated>:groupID:<comma-separated list of participants>
+
+--groups current user belongs to:
+groups
+
+--get user list
+users
+sudo more /etc/passwd | grep <qualifier>
+sudo more /etc/passwd | sort
+..
+login:pwdHash:userId:defaultGroupId:GECOS?:honedir:shell
+
+--add sudoer????
+
+
+
+
