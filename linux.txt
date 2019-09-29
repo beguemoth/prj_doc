@@ -46,6 +46,7 @@ sudo more /etc/passwd | sort
 
 --add sudoer
 
+vlc -- good media player for ubuntu
 
-
-
+--comprehensive data about memory 
+sudo dmidecode --type 17
