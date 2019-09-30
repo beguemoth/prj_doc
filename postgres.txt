@@ -14,6 +14,17 @@ select current_date;
 
 \i fil_name.sql
 
+--Database list
+\l
+
+
+--change postgres password
+su -i -u postgres
+psql
+\password
+--enter new pwd
+--confirm new pwd
+
 datatypes
 	varchar(x)
 	int ?
@@ -52,3 +63,6 @@ select a, sum(a) over(order by a) from x;
 1 1
 2 3
 3 6
+
+
+postgres is a main db process.

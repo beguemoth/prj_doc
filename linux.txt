@@ -50,3 +50,7 @@ vlc -- good media player for ubuntu
 
 --comprehensive data about memory 
 sudo dmidecode --type 17
+
+sudo su - postgres ????
+
+sudo -i -u postgres

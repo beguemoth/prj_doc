@@ -1,3 +1,6 @@
+--get postgresql version
+//select version();
+
 ﻿--select * from test;
 /*
 create table testx(
