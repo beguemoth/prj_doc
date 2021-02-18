@@ -2,3 +2,12 @@ dbname - postgres
 pwd - postgres
 dir - c:\PostgreSQL
 c:\PostgreSQL\data\pg11
+
+
+Beguemoth321
+
+
+carillon
+Jonotus321
+
+

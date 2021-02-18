@@ -1,5 +1,14 @@
+???
+apt-get update vs apt-get upgrade
+
+?---Ora Lin
+whet is RunLevel 3 or 5?
+---
+
 --free memory
 free -m
+$ cat /proc/meminfo
+$ less /proc/meminfo
 
 --type of ram 
 sudo lshw -short -C memory
@@ -10,8 +19,8 @@ sudo lshw -C memory
 --rm dir
 rm -rf directory
 
----Ora Lin
-what is RunLevel 3 or 5?
+
+
 
 ---
 systemctrl enable <service name = postgresql-11>
