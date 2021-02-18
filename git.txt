@@ -1,4 +1,22 @@
+#Make new repository
+
+touch README.md
 git init
+git add README.md
+git commit -m "My first commit"
+? git remote add origin https://github.com/Beguemoth/prj_react.git
+? git push -u origin master
+
+#push an existing repository
+
+? git remote add origin https://github.com/Beguemoth/prj_react.git
+? git push -u origin master
+
+#the repository must be created beforehand on github!
+
+				
+#################
+git init --inits an existing directory. How to push it then?
 git add *.txt
 git commit -m 'message'
 git push --pushes committed changes to git server
